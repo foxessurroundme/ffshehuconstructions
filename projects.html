@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FF Zuma Projects</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Frank Ruhl Libre", serif;
+      color: black;
+      width: auto;
+    }
+    .video-container {
+      position: relative;
+      overflow: hidden;
+    }
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .top-margin {
+      align-items: center;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .logo {
+      max-width: 100px; 
+            margin-right: 0px; 
+            cursor: pointer;
+            background-color: whitesmoke;
+    }
+    #but1, #but2, #but3 {
+      background: transparent;
+      color: #f4f0bb;
+      border: none;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .blue-back {
+      margin-top: 70px;
+      padding: 20px;
+      border-radius: 25px;
+      text-align: center;
+      justify-content: center;
+      padding-left: 10vh;
+      padding-right: 10vh;
+      background: linear-gradient(45deg, #f3d4d4 20%, transparent 20%);
+      background-size: 200% 200%;
+      background-position: bottom right;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+    #white-back {
+      background-color: #f4f0bb;
+      border: 5px solid #43291f;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 1000px;
+      text-align: center;
+      justify-content: center;
+      margin: 20px;
+    }
+    p {
+      font-size: 17px;
+      margin: 0;
+    }
+    h1 {
+      text-transform: uppercase;
+      color: #da2c38;
+      text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
+    }
+    li {
+      font-size: 21px;
+    }
+    @media screen and (max-width: 768px) {
+      .container {
+        margin-top: 10vh;
+      }
+      .title {
+        font-size: 30px;
+      }
+      .p {
+        font-size: 12px;
+      }
+      .blue-back {
+        padding: 5px;
+      }
+      .white-back {
+        padding: 5px;
+        max-width: 500px;
+      }
+    }
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 50px auto;
+      padding-left: 10vh;
+      padding-right: 10vh;
+      
+      background-size: 200% 200%;
+      background-position: bottom right;
+      padding: 20px;
+      border-radius: 15px;
+    
+    }
+    .box {
+      width: calc(300px - 70px);
+      height: 300px;
+      background-color: #f4f0bb;
+      border: 3px solid #43291f;
+      margin: 10px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    }
+    .box:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .box-image {
+  max-width: 200px;
+  max-height: 400px; /* Adjust this value as needed */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #43291f;
+  margin-top: 3px;
+}
+
+.box-image img {
+  width: auto;
+  max-height: 100%;
+}
+    .slideshow-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: auto;
+    }
+    .slideshow-content {
+      position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+
+    }
+    .slideshow-image {
+      max-width: 650px;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+  margin: 0 auto; /* Center the image horizontally */
+  border: 3px solid #43291f;
+
+}
+    .caption {
+      font-size: 25px;
+      color: black;
+      margin-top: 10px;
+      box-sizing: content-box;
+      background-color: #f4f0bb;
+      border: 3px solid #43291f;
+    
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 40px;
+      color: #333;
+      box-sizing: border-box;
+      background-color: aliceblue;
+      cursor: pointer;
+      padding: 10px;
+      border: 2px solid #000;
+
+    }
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      font-size: 46px;
+      cursor: pointer;
+      color: black;
+      padding: 10px;
+      border: 2px solid #000;
+  
+     
+    }
+    .prev {
+      left: 5px;
+      box-sizing: border-box;
+      background-color: aliceblue;
+      
+
+    
+    }
+    .next {
+      right: 5px;
+      box-sizing: border-box;
+      background-color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <img id="video-bg" src="background image for flori.jpg" alt="">
+  
+  <div class="top-margin">
+    <img  onclick="location.href='home.html'" src="logo FF.png" alt="Logo" class="logo"> 
+    <button onclick="location.href='home.html'" id="but1">Home</button>
+    <button onclick="location.href='Projects.html'" id="but3">Projects</button>
+    <button onclick="location.href='contact.html'" id="but2">Contacts</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blue-back">
+    <h1 id="white-back">Our projects up to date</h1>
+    <div id="white-back">
+      <p> Many years of experience and practice, 2 brothers skilled in:</p>
+      <ul>
+        <li>Lofts</li>
+        <li>Extensions</li>
+        <li>Refurbs</li>
+        <li>New builds</li>
+        <li>Bathroom Tiling</li>
+        <li>Kitchen Tiling</li>
+        <li>Floor Tiling</li>
+        <li>Kitchen installation</li>
+        <li>Patio Builds</li>
+        <li>Porch Builds</li>
+        <li>Door Installations</li>
+        <li>Window Installations</li>
+        <li>Skirting and Architrave Installations</li>
+        <li>Retaining walls</li>
+        <li>Fencing</li>
+        <li>Woodwork</li>
+        <li>Brickwork</li>
+        <li>Painting</li>
+        <li>Decorating</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blue-back">
+    <div class="box-container">
+      <div class="box" onclick="openSlideshow(0)">
+        <div class="box-image">
+          <img src="after 2 door 2.jpg" alt="Project 1">
+        </div>
+        <div>House Refurb</div>
+      </div>
+      <div class="box" onclick="openSlideshow(1)">
+        <div class="box-image">
+          <img src="new build 5.jpg
+          " alt="Project 2">
+        </div>
+        New Build (Still in Progress)
+      </div>
+    
+      <div class="box" onclick="openSlideshow(2)">
+        <div class="box-image">
+          <img src="path/to/image3.jpg" alt="Project 3">
+        </div>
+        (project coming soon)
+      </div>
+      <!-- Add more boxes with images as needed -->
+    </div>
+  </div>
+</div>
+
+<div id="slideshow-modal" class="slideshow-modal">
+  <span class="close" onclick="closeSlideshow()">&times;</span>
+  <div class="slideshow-content">
+    <div class="slideshow-image-container">
+      <img id="slideshow-image" src="" alt="Slideshow Image" class="slideshow-image">
+    </div>
+    <div id="slideshow-caption" class="caption"></div>
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+</div>
+
+<script>
+  const projectSlideshows = [
+    {
+      images: [
+        "before 1 door.jpg",
+        "after 1 door.jpg",
+        "door.jpg",
+        "skirting and achitraves.jpg",
+        "before 1 room.jpg",
+        "after 1 room.jpg",
+        "room.jpg",
+        "before 2 door.jpg",
+        "after 2 door.jpg",
+        "after 2 door 2.jpg",
+        "before 3 door.jpg",
+        "after 3 door.jpg",
+        "tiles 2.jpg",
+        "tiles 3.jpg",
+        "tilles 1.jpg",
+        "tiles4.jpg",
+        "bathroom 1.jpg",
+       
+
+        
+        
+      ],
+      captions: [
+        "Doors Before",
+        "Doors After-(Skirting, Architraves, Doors, Plastering and painting done)",
+        "",
+        "Skirting, Doors  Architraves",
+        "Room 1 Before",
+        "Room 1 After-(Plastering and Painting Done)",
+        "",
+        "Room with Door Before",
+        "Room with Door After-(Profesionally Done Floor Tiles)",
+        "Plastering and Painting also Done for this Room",
+        "Room Before",
+        "Room 1 After-(plastering and painting done)",
+        "Downstairs Bathroom Tiles Done",
+        "",
+        "Upstairs Bathroom Tiles Done",
+        "",
+        "Sink Installed",
+        
+        
+      ],
+    },
+    {
+      images: [
+        "new build 1.jpg",
+        "new build 2.jpg",
+        "new build 3.jpg",
+        "new build 4.jpg",
+        "new build 5.jpg",
+        "new build 6.jpg",
+      ],
+      captions: [
+      "Back Garden Summer House New Build",
+        "Woodwork Roof",
+        "Blocks Chosen by Client",
+        "",
+        "Client Chosen Window Placement",
+        "At This Moment Still in Progress",
+      ],
+    },
+    {
+      images: [
+       
+        
+      ],
+      captions: [
+   
+      ],
+    },
+    // Add more project slideshows as needed
+  ];
+
+  let currentProjectIndex = 0;
+  let currentSlideIndex = 0;
+
+  function openSlideshow(projectIndex) {
+    currentProjectIndex = projectIndex;
+    currentSlideIndex = 0;
+    showSlide(currentSlideIndex);
+    document.getElementById("slideshow-modal").style.display = "block";
+  }
+
+  function closeSlideshow() {
+    document.getElementById("slideshow-modal").style.display = "none";
+  }
+
+  function changeSlide(direction) {
+    currentSlideIndex += direction;
+    const currentSlideshow = projectSlideshows[currentProjectIndex];
+    if (currentSlideIndex < 0) {
+      currentSlideIndex = currentSlideshow.images.length - 1;
+    } else if (currentSlideIndex >= currentSlideshow.images.length) {
+      currentSlideIndex = 0;
+    }
+    showSlide(currentSlideIndex);
+  }
+
+  function showSlide(slideIndex) {
+    const slideshowImage = document.getElementById("slideshow-image");
+    const slideshowCaption = document.getElementById("slideshow-caption");
+
+    const currentSlideshow = projectSlideshows[currentProjectIndex];
+    slideshowImage.src = currentSlideshow.images[slideIndex];
+    slideshowCaption.textContent = currentSlideshow.captions[slideIndex];
+  }
+</script>
+
+</body>
+</html>
