@@ -68,16 +68,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            margin-top:250px;
+            flex-direction: row;
+            margin-top:400px;
             margin-bottom: 250px;
         }
      
         h1 {
             text-transform: uppercase;
             color: #da2c38;
-            text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
             font-family: Verdana, Geneva, sans-serif;
+text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
         }
         .hhh{
     margin-right: 20vh;
@@ -90,20 +90,20 @@ p {
 
         }
         .blue-back {
-      margin-top: 70px;
-      padding: 20px;
-      border-radius: 25px;
-      text-align: center;
-      justify-content: center;
-      padding-left: 10vh;
-      padding-right: 10vh;
+            padding: 20px;
+            border-radius: 25px;
+            text-align: center;
+            justify-content: center;
+            padding-left: 10vh auto;
+            padding-right: 10vh auto;
   background-size: 200% 200%; /* Adjust the size as needed */
   background-position: bottom right;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3)
-     
-    }
+  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #f3d4d4 20%, transparent 20%);
+
+        }
         
 .white-back {
       background-color: #f4f0bb;
@@ -114,12 +114,18 @@ p {
       text-align: center;
       justify-content: center;
       margin: 20px;
+
     }
 
+
+   
     p {
       font-size: 17px;
       margin: 0;
     }
+    .phone {
+        cursor: pointer;
+    }
 
 
 
@@ -132,9 +138,7 @@ p {
 
 
 
-
-
-        @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
             .container {
                 margin-top: 10vh;
             }
@@ -151,11 +155,14 @@ p {
                 padding: 5px;
                 max-width: 500px;
             }
-              .h1 {
-            font-size: 16px;
-
+            .top-margin {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
             }
         }
+           
     </style>
     
     </head>
@@ -164,8 +171,8 @@ p {
             <img id="video-bg" src="photos/background image for flori.jpg" alt="">
             
             <div class="top-margin">
-                <img  onclick="location.href='index.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
-                <button onclick="location.href='index.html'" id="but1">Home</button>
+                <img  onclick="location.href='home.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
+                <button onclick="location.href='home.html'" id="but1">Home</button>
                 <button onclick="location.href='projects.html'" id="but3">Projects</button>
                 <button onclick="location.href='contact.html'" id="but2">Contacts</button>
             </div>
@@ -176,9 +183,9 @@ p {
                             <h1 >Contact us</h1>
                             <p>For any enquieres choose to send us a message or call directly at our open lines. </p>
 
-                            <h2>Telephone 1 : 07308421968</h2>
-                            <h2>Telephone 2 : 07307290506</h2>
-                            <h2>Email : ffshehuconstruction@gmail.com </h2>
+                            <h2 class="phone">Telephone 1 : 07308421968</h2>
+                            <h2 class="phone">Telephone 2 : 07307290506</h2>
+                            <h2 ><a href="mailto:ffshehuconstruction@gmail.com">FFshehuconstruction@gmail.com</a></h2>
                             <h2>Facebook :</h2>
                             <p>The advancments of your property is our priority</p>
                         </div>
