@@ -32,8 +32,6 @@
         }
 
         .top-margin {
-          
-          /* Center the buttons horizontally */
           align-items: center;
           padding: 10px;
           position: fixed;
@@ -69,18 +67,19 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            margin-top:400px;
-            margin-bottom: 250px;
+            height: 800px;
+            
+            
         }
      
         h1 {
             text-transform: uppercase;
             color: #da2c38;
             font-family: Verdana, Geneva, sans-serif;
-text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
+            text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
         }
         .hhh{
-    margin-right: 20vh;
+            margin-right: 20vh;
   
 }
 p {
@@ -90,24 +89,24 @@ p {
 
         }
         .blue-back {
-            padding: 20px;
-            border-radius: 25px;
-            text-align: center;
-            justify-content: center;
-            padding-left: 10vh auto;
-            padding-right: 10vh auto;
-  background-size: 200% 200%; /* Adjust the size as needed */
-  background-position: bottom right;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #f3d4d4 20%, transparent 20%);
-
-        }
+      margin-top: 70px;
+      padding: 20px;
+      border-radius: 25px;
+      text-align: center;
+      justify-content: center;
+      padding-left: 10vh;
+      padding-right: 10vh;
+      background: linear-gradient(45deg, #f3d4d4 20%, transparent 20%);
+      background-size: 200% 200%;
+      background-position: bottom right;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 1);
+    }
         
 .white-back {
+      background: linear-gradient(45deg, #43291f 20%, transparent 20%);
       background-color: #f4f0bb;
-      border: 5px solid #43291f;
       padding: 30px;
       border-radius: 15px;
       max-width: 1000px;
@@ -171,14 +170,14 @@ p {
             <img id="video-bg" src="photos/background image for flori.jpg" alt="">
             
             <div class="top-margin">
-                <img  onclick="location.href='index.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
-                <button onclick="location.href='index.html'" id="but1">Home</button>
+                <img  onclick="location.href='home.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
+                <button onclick="location.href='home.html'" id="but1">Home</button>
                 <button onclick="location.href='projects.html'" id="but3">Projects</button>
                 <button onclick="location.href='contact.html'" id="but2">Contacts</button>
             </div>
     
             <div class="container"> 
-                    <div id="blue-back">
+                    <div class="blue-back">
                         <div class="white-back">
                             <h1 >Contact us</h1>
                             <p>For any enquieres choose to send us a message or call directly at our open lines. </p>
