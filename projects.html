@@ -28,38 +28,50 @@
       z-index: -1;
     }
     .top-margin {
-      align-items: center;
-      padding: 10px;
-      position: fixed;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.7);
-    }
-    .logo {
-      max-width: 100px; 
-            margin-right: 0px; 
-            cursor: pointer;
-            background-color: whitesmoke;
-    }
-    #but1, #but2, #but3 {
-      background: transparent;
-      color: #f4f0bb;
-      border: none;
-      font-size: 18px;
-      margin: 10px;
-      cursor: pointer;
-    }
+          align-items: center;
+          padding: 10px;
+          position: fixed;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.7);
+      }
+
+      .logo {
+          max-width: 100px; 
+          margin-right: 0px; 
+          cursor: pointer;
+          background-color: whitesmoke;
+      }
+
+      .logo2 {
+          max-width: 220px;
+          align-items: center;
+          justify-content: center;
+
+      }
+
+
+      #but1,
+      #but2,
+      #but3 {
+          background: transparent;
+          color: #f4f0bb;
+          border: none;
+          font-size: 18px;
+          margin: 10px;
+          cursor: pointer;
+      }
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 150vh;
+      height: 600px
       padding: 40px;
     }
     .blue-back {
@@ -75,11 +87,12 @@
       background-position: bottom right;
       padding: 20px;
       border-radius: 15px;
-      box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 1);
     }
     #white-back {
+      background: linear-gradient(45deg, #43291f 20%, transparent 20%);
+
       background-color: #f4f0bb;
-      border: 5px solid #43291f;
       padding: 30px;
       border-radius: 15px;
       max-width: 1000px;
@@ -117,6 +130,23 @@
         padding: 5px;
         max-width: 500px;
       }
+      .slideshow-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 95%; /* Adjust this value as needed for better fitting */
+  }
+
+  .slideshow-image {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Auto adjust height */
+    margin: 0 auto; /* Center the image horizontally */
+  }
     }
     .box-container {
       display: flex;
@@ -135,8 +165,8 @@
     .box {
       width: calc(300px - 70px);
       height: 300px;
+      width: 600px;
       background-color: #f4f0bb;
-      border: 3px solid #43291f;
       margin: 10px;
       align-items: center;
       justify-content: center;
@@ -145,6 +175,8 @@
       display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 1);
+
     }
     .box:hover {
       background-color: #333;
@@ -152,13 +184,12 @@
     }
 
     .box-image {
-  max-width: 200px;
+  max-width: 350px;
   max-height: 400px; /* Adjust this value as needed */
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #43291f;
   margin-top: 3px;
 }
 
@@ -195,7 +226,6 @@
   width: auto;
   height: auto;
   margin: 0 auto; /* Center the image horizontally */
-  border: 3px solid #43291f;
 
 }
     .caption {
@@ -204,7 +234,6 @@
       margin-top: 10px;
       box-sizing: content-box;
       background-color: #f4f0bb;
-      border: 3px solid #43291f;
     
     }
     .close {
@@ -253,8 +282,8 @@
   <img id="video-bg" src="photos/background image for flori.jpg" alt="">
   
   <div class="top-margin">
-    <img  onclick="location.href='index.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
-    <button onclick="location.href='index.html'" id="but1">Home</button>
+    <img  onclick="location.href='home.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
+    <button onclick="location.href='home.html'" id="but1">Home</button>
     <button onclick="location.href='projects.html'" id="but3">Projects</button>
     <button onclick="location.href='contact.html'" id="but2">Contacts</button>
   </div>
@@ -264,7 +293,7 @@
   <div class="blue-back">
     <h1 id="white-back">Our projects up to date</h1>
     <div id="white-back">
-      <p> Many years of experience and practice, 2 brothers skilled in:</p>
+      <p> Many years of experience and practice, We run a company with skilled builders that professionalize in:</p>
       <ul>
         <li>Lofts</li>
         <li>Extensions</li>
@@ -291,7 +320,6 @@
 </div>
 
 <div class="container">
-  <div class="blue-back">
     <div class="box-container">
       <div class="box" onclick="openSlideshow(0)">
         <div class="box-image">
@@ -316,7 +344,6 @@
       <!-- Add more boxes with images as needed -->
     </div>
   </div>
-</div>
 
 <div id="slideshow-modal" class="slideshow-modal">
   <span class="close" onclick="closeSlideshow()">&times;</span>
