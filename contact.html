@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>FF Home</title>
+    <title>FF Zuma Contacts</title>
     <style>
         body {
             margin: 0;
@@ -31,25 +31,35 @@
         }
 
         .top-margin {
-          align-items: center;
-          padding: 10px;
-          position: fixed;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 1;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          background: rgba(0, 0, 0, 0.7);
-      }
+          
+            /* Center the buttons horizontally */
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+        }
 
-      .logo {
-        max-width: 100px; 
+        .logo {
+            max-width: 100px; 
             margin-right: 0px; 
             cursor: pointer;
-            background-color: #f4f0bb;
-      }
+            background-color: whitesmoke;
+        }
+
+        .logo2 {
+            max-width: 220px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
 
         #but1,
         #but2,
@@ -61,80 +71,78 @@
             margin: 10px;
             cursor: pointer;
         }
+
+       
+
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 800px;
-            padding: 40px;
+            margin-top:250px;
+            margin-bottom: 250px;
+        }
+   
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top:400px;
+            margin-bottom: 250px;
+        }
+        .blue-back {
+            padding: 20px;
+            border-radius: 25px;
+            text-align: center;
+            justify-content: center;
+            padding-left: 10vh auto;
+            padding-right: 10vh auto;
+  background-size: 200% 200%; /* Adjust the size as needed */
+  background-position: bottom right;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 1);
+
+  
+        }
+
+        #white-back {
+            background: linear-gradient(45deg, #43291f 20%, transparent 20%);
+            background-color:#f4f0bb;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 1000px;
+            text-align: center;
+            justify-content: center;
+            margin: 20px;
             
         }
-     
-        h1 {
-            text-transform: uppercase;
-            text-align: center;
-            color: #da2c38;
-            font-family: Verdana, Geneva, sans-serif;
-            text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
-        }
-       
-p {
+
+        
+        p {
             font-size: 17px;
             margin: 0;
             text-align: center;
 
         }
-        .blue-back {
-      margin-top: 70px;
-      padding: 20px;
-      border-radius: 25px;
-      text-align: center;
-      justify-content: center;
-      padding-left: 10vh;
-      padding-right: 10vh;
-      background: linear-gradient(45deg, #f3d4d4 20%, transparent 20%);
-      background-size: 200% 200%;
-      background-position: bottom right;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 1);
-    }
-        
-.white-back {
-      background: linear-gradient(45deg, #43291f 20%, transparent 20%);
-      background-color: #f4f0bb;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 700px;
-      text-align: center;
-      justify-content: center;
-      margin: 20px;
+        h1 {
+            text-transform: uppercase;
+            font-family: Verdana, Geneva, sans-serif;
+            color: #da2c38;
+text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
+        }
 
-    }
-
-
-   
-    p {
-      font-size: 17px;
-      margin: 0;
-    }
-    .phone {
-        cursor: pointer;
-    }
+        .h2{
+            margin: 0;
+            text-align: center; 
+        }
 
 
 
+      
 
-
-
-
-
-
-
-
-
-    @media screen and (max-width: 768px) {
+        @media screen and (max-width: 768px) {
             .container {
                 margin-top: 10vh;
             }
@@ -157,50 +165,49 @@ p {
                 position: relative;
                 padding: 10px;
             }
+            .h1 {
+            font-size: 16px;
 
-            .logo,
-            .logo2 {
-               max-width: 150px;
             }
-
-            #but1,
-            #but2,
-            #but3 {
-              font-size: 14px;
-               margin: 5px;
+            .h2 {
+                font-size: 13px;
+ 
             }
-    }
+        }
            
-    </style>
-    
-    </head>
-    <body>
-        <div class="video-container">
-            <img id="video-bg" src="photos/background image for flori.jpg" alt="">
+
             
-            <div class="top-margin">
-                <img  onclick="location.href='index.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
-                <button onclick="location.href='index.html'" id="but1">Home</button>
-                <button onclick="location.href='projects.html'" id="but3">Projects</button>
-                <button onclick="location.href='contact.html'" id="but2">Contacts</button>
-            </div>
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <img id="video-bg" src="photos/background image for flori.jpg" alt="">
+
+        <div class="top-margin">
+            <img  onclick="location.href='home.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
+            <button onclick="location.href='home.html'" id="but1">Home</button>
+            <button onclick="location.href='projects.html'" id="but3">Projects</button>
+            <button onclick="location.href='contact.html'" id="but2">Contacts</button>
+        </div>
+
     
-            <div class="container"> 
-                    <div class="blue-back">
-                        <div class="white-back">
-                            <h1 >Contact us</h1>
-                            <p>For any enquieres choose to send us a message or call directly at our open lines. </p>
+    <div class="container2">
+        <div class="blue-back">
 
-                            <h2 class="phone">Telephone 1 : 07308421968</h2>
-                            <h2 class="phone">Telephone 2 : 07307290506</h2>
-                            <h2 ><a href="mailto:ffshehuconstruction@gmail.com">FFshehuconstruction@gmail.com</a></h2>
-                            <h2>Facebook :</h2>
-                            <p>The advancments of your property is our priority</p>
-                        </div>
-                    </div>
+            <div id="white-back">
+                <h1>Contact us</h1>
+                <p>For any enquieres choose to send us a message or call directly at our open lines.</p>
+                <h2 class="phone">Telephone 1 : 07308421968</h2>
+                <h2 class="phone">Telephone 2 : 07307290506</h2>
+                <h2 ><a href="mailto:ffshehuconstruction@gmail.com">FFshehuconstruction@gmail.com</a></h2>
+                <h2>Facebook :</h2>
+                <p>The advancments of your property is our priority</p>
             </div>
+         </div>
+    </div>
 
+   
 
-
-                </body>
+   
+</body>
 </html>
