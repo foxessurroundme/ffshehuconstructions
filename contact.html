@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +50,7 @@
             max-width: 100px; 
             margin-right: 0px; 
             cursor: pointer;
-            background-color: #f4f0bb;
+            background-color: whitesmoke;
         }
 
         .logo2 {
@@ -83,15 +82,7 @@
             margin-top:250px;
             margin-bottom: 250px;
         }
-        .container3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top:250px;
-            margin-bottom: 250px;
-            margin-right: 50px;
-
-        }
+   
         .container2 {
             display: flex;
             justify-content: center;
@@ -127,18 +118,7 @@
             margin: 20px;
             
         }
-        .title {
-            font-family: Verdana, Geneva, sans-serif;
-            font-size: 60px;
-            text-shadow: #87c38f(0, 0, 0) -2px 2px 1px;
-            background: transparent;
-            margin: 0;
-            line-height: 1.5;
-            text-align: center;
-            text-transform: uppercase;
-            color: rgba(0,0,0,0.6);
-text-shadow: 1px 3px 4px #da2c38(10, 114, 41, 0.2), 
-        }
+
         
         p {
             font-size: 17px;
@@ -146,14 +126,17 @@ text-shadow: 1px 3px 4px #da2c38(10, 114, 41, 0.2),
             text-align: center;
 
         }
-        h2 {
+        h1 {
             text-transform: uppercase;
             font-family: Verdana, Geneva, sans-serif;
-            font-size:18px;
-            margin: 0;
-            text-align: center;
+            color: #da2c38;
+text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 4px 4px 0px;
         }
 
+        .h2{
+            margin: 0;
+            text-align: center; 
+        }
 
 
 
@@ -182,68 +165,49 @@ text-shadow: 1px 3px 4px #da2c38(10, 114, 41, 0.2),
                 position: relative;
                 padding: 10px;
             }
-            .h2 {
-            font-size: 13px;
+            .h1 {
+            font-size: 16px;
 
             }
-                .top-margin {
-        padding: 5px;
-    }
-
-    .logo,
-    .logo2 {
-        max-width: 150px;
-    }
-
-    #but1,
-    #but2,
-    #but3 {
-        font-size: 14px;
-        margin: 5px;
-    }
+            .h2 {
+                font-size: 13px;
+ 
+            }
         }
            
-
+.facebook {
+    position: relative;
+    width: 80px;
+}
             
     </style>
 </head>
 <body>
     <div class="video-container">
-        <img id="video-bg" src="photos/background image for flori.jpg" alt="">
+        <img id="video-bg" src="background image for flori.jpg" alt="">
 
         <div class="top-margin">
-            <img  onclick="location.href='index.html'" src="photos/logo FF.png" alt="Logo" class="logo"> 
-            <button onclick="location.href='index.html'" id="but1">Home</button>
+            <img  onclick="location.href='home.html'" src="logo FF.png" alt="Logo" class="logo"> 
+            <button onclick="location.href='home.html'" id="but1">Home</button>
             <button onclick="location.href='projects.html'" id="but3">Projects</button>
             <button onclick="location.href='contact.html'" id="but2">Contacts</button>
         </div>
 
-        <div class="container">
-            <div class="blue-back">
-                <div id="white-back">
-                    <h1>Contact us</h1>
-                </div>
-              
-              <div id="white-back">
-                <p>For any enquieres choose to send us a message or call directly at our open lines.</p>
-                <p>The advancments of your property is our priority</p>
-              </div>
-            </div>
-        </div>
     
     <div class="container2">
         <div class="blue-back">
 
             <div id="white-back">
-                <h1>Do you want something done?</h1>
-                <p>Thinking about knocking down your garage for an extra room or simply extending your house, adding a loft, bedroom, office workspace or something simple such as new doors, decor, tiles, outdoor fences? Our plan is to reach everyone who has a vision for their home to make it a reality.</p>
-           </div>
-           
-          
-
-           
-
-        </div>
+                <h1>Contact us</h1>
+                <p>For any enquieres choose to send us a message or call directly at our open lines.</p>
+                <h2 class="phone">Telephone 1 : 07308421968</h2>
+                <h2 class="phone">Telephone 2 : 07307290506</h2>
+                <h2 ><a href="mailto:ffshehuconstruction@gmail.com">FFshehuconstruction@gmail.com</a></h2>
+                <h2>Facebook :</h2>
+                <img src="facebooklogo.png" class="facebook">
+                <p>The advancments of your property is our priority</p>
+            </div>
+         </div>
     </div>
 
    
